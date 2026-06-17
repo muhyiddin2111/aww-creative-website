@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Company Name | 3D Printing Solutions</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0a0a0a;
+    color:white;
+}
+
+/* NAVIGATION */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,0.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+}
+
+.logo img{
+    height:100px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:30px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:#7c3aed;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+    url("images/Background.png.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+.hero p{
+    color:#ddd;
+    font-size:20px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#7c3aed;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#4f46e5;
+}
+
+/* GENERAL */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    color:white;
+}
+
+/* ABOUT (UPDATED) */
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:#ccc;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.about-features{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.feature-box{
+    background:#111827;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.feature-box:hover{
+    transform:translateY(-10px);
+}
+
+.feature-box h3{
+    color:#7c3aed;
+    margin-bottom:10px;
+}
+
+.feature-box p{
+    color:#ccc;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#111827;
+    padding:30px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#7c3aed;
+    margin-bottom:15px;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.portfolio img{
+    width:100%;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.portfolio img:hover{
+    transform:scale(1.03);
+}
+
+/* CERTIFICATE */
+
+.certificates{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap: 20px;
+}
+
+.cert{
+    text-align:center;
+}
+
+.cert img{
+    width:40%;
+    border-radius:15px;
+}
+
+/* CLIENT */
+
+.clients{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.client-box{
+    background:#111827;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+}
+
+.client-box img{
+    width:100%;
+    max-height:100px;
+    object-fit:contain;
+}
+
+/* CONTACT */
+
+.contact{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact form{
+    display:flex;
+    flex-direction:column;
+}
+
+.contact input,
+.contact textarea{
+    background:#111827;
+    color:white;
+    border:none;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:8px;
+}
+
+.contact button{
+    background:#7c3aed;
+    color:white;
+    border:none;
+    padding:15px;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+.contact button:hover{
+    background:#4f46e5;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111827;
+    color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav ul li{
+    margin:10px;
+}
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+<img src="images/Company Logo.png" alt="Company Logo">
+</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#certificate">Certificate</a></li>
+<li><a href="#clients">Clients</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>3D Printing Design</h1>
+
+<p>
+Professional 3D Design & Modelling, Design Consultation,
+Prototype Development and 3D Printing Services.
+</p>
+
+<a href="#services" class="btn">Explore Services</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT (FIXED & IMPROVED) -->
+
+<section id="about">
+
+<h2 class="section-title">About Us</h2>
+
+<div class="about">
+
+<p>
+At AWW Creative Resources, we provide professional 3D design, modelling,
+rapid prototyping, and 3D printing solutions tailored to meet the
+needs of students, researchers, engineers, and businesses.
+</p>
+
+<br>
+
+<p>
+Our team is committed to transforming innovative ideas into functional
+products through advanced additive manufacturing technology and
+precision engineering. From concept development to final production,
+we ensure quality, accuracy, and customer satisfaction in every project.
+</p>
+
+<br>
+
+<p>
+Whether you need product prototypes, educational models, engineering
+components, architectural designs, or customized 3D printed parts,
+we are ready to deliver reliable and cost-effective solutions.
+</p>
+
+</div>
+
+<div class="about-features">
+
+<div class="feature-box">
+<h3>High Quality</h3>
+<p>Precision 3D printing with reliable and consistent results.</p>
+</div>
+
+<div class="feature-box">
+<h3>Custom Design</h3>
+<p>Tailored solutions based on your requirements and ideas.</p>
+</div>
+
+<div class="feature-box">
+<h3>Fast Delivery</h3>
+<p>Efficient production process with timely project completion.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="section-title">Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>3D Design & Modelling</h3>
+<p>Create detailed CAD models and digital product designs.</p>
+</div>
+
+<div class="card">
+<h3>Design Consultation</h3>
+<p>Expert consultation to optimize your design and manufacturing process.</p>
+</div>
+
+<div class="card">
+<h3>Prototype Development</h3>
+<p>Rapid prototyping for testing, validation and product improvement.</p>
+</div>
+
+<div class="card">
+<h3>3D Printing Service</h3>
+<p>Professional high-quality printing with precision and efficiency.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+<h2 class="section-title">Project Showcase</h2>
+
+<div class="portfolio">
+
+<img src="images/Scoreboard.png" alt="Project 1">
+
+<img src="images/RandomPrinting.png" alt="Project 2">
+
+<img src="images/HouseModel.png" alt="Project 3">
+
+</div>
+
+</section>
+
+<!-- CERTIFICATE -->
+
+<section id="certificate">
+
+<h2 class="section-title">Certificates</h2>
+
+<div class="certificates">
+
+<div class="cert">
+<img src="images/Certificates.png" alt="Certificate">
+</div>
+
+</div>
+
+</section>
+
+<!-- CLIENTS -->
+
+<section id="clients">
+
+<h2 class="section-title">Our Clients</h2>
+
+<div class="clients">
+
+<div class="client-box">
+<img src="images/client 1.png">
+</div>
+
+<div class="client-box">
+<img src="images/client 2.png">
+</div>
+
+<div class="client-box">
+<img src="images/client3.png">
+</div>
+
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">Contact Us</h2>
+
+<div class="contact">
+
+<form>
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="text" placeholder="Phone Number">
+
+<textarea rows="6" placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Your Company Name | All Rights Reserved
+
+</footer>
+
+<script>
+
+document.querySelector("form").addEventListener("submit",function(e){
+e.preventDefault();
+alert("Thank you! Your message has been submitted successfully.");
+});
+
+</script>
+
+</body>
+</html>
